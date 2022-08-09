@@ -1,8 +1,8 @@
 # Mental Health Support
-This application is live therefore it can be viewed by visiting https://mhs-group21.herokuapp.com/
 ***
-This is Group21's coursework for COM2027 Software Engineering. 
-It is a online forum created using Ruby on Rails. 
+This is Group21's coursework for COM2027 Software Engineering. It is an online forum created using Ruby on Rails. 
+
+This application is live and it can be viewed by visiting: https://mhs-group21.herokuapp.com/
 ***
 ## Setup
 - The following version of Ruby and Rails needs to be installed for the application to run. 

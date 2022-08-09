@@ -1,0 +1,4 @@
+- content_for(:html_title) { 'MHS - New Discussion' }
+%h1.title.is-3 New Discussion
+= render 'form', discussion: @discussion
+= link_to 'Back', discussions_path

@@ -1,0 +1,5 @@
+- content_for(:html_title) { 'MHS - New Channel' }
+.columns.is-centered
+  .column.is-4
+    %h1.title.is-3 Create a new channel
+    = render 'form', channel: @channel

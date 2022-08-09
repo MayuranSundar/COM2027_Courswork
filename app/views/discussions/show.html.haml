@@ -1,0 +1,35 @@
+- content_for(:html_title) { "MHS - #{@discussion.title}" }
+.columns
+  .column.is-8
+    %h1.title.is-2.discussion-title
+      =@discussion.title
+    %h3.subtitle.is-5.has-text-grey-lighter
+      by #{@discussion.user.username} in #{link_to @discussion.channel.name, @discussion.channel}
+    .content
+      = markdown(@discussion.content)
+    .level
+      .level-left
+      .level-left
+        -#  check profile so that only author of discussion can edit or remove. TEST PASSED SUCCESFULLY: ONLY USERS CAN EDIT THEIR OWN COMMENT
+      - if discussion_author(@discussion)
+        .buttons
+          =link_to 'Edit Discussion', edit_discussion_path(@discussion), class:'button button is-info is-outlined'
+          =button_to 'Delete', discussion_path(@discussion), class:'button button is-info is-outlined', method:'delete' ,data: {confirm: "Are you sure?"}
+
+        %h2.subtitle.is-5
+          =@discussion.replies.count
+          Replies
+    #discussion-replies
+      - @discussion.replies.each do |reply|
+        -unless reply.parent_id
+          = render reply
+    %h3.subtitle.is-3 Reply
+    -if user_signed_in?
+      = render 'replies/form'
+    -else
+      %p To reply you need to
+      = link_to 'Log In', new_user_session_path
+      or
+      =link_to 'Sign Up', new_user_registration_path
+  = render 'sidebar'
+-#a

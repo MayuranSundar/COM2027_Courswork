@@ -1,4 +1,4 @@
-# Mental Health Support
+# Mental Health Support - Web Application Coursework
 ***
 This is Group21's coursework for COM2027 Software Engineering. It is an online forum created using Ruby on Rails. 
 
